@@ -1,14 +1,13 @@
-import React from "react"
-import Chat from "./Chat"
+import React from 'react'
+import Hero from './Hero'
+import Chat from './Chat'
 
 const Home = () => {
   return (
     <main>
-    <div className='pt-8'>
-    <h1 className='text-6xl my-4 font-bold text-center'>chatbox</h1>
-    </div>
+    <Hero/>
     <Chat/>
-    </main>
+   </main>
   )
 }
 

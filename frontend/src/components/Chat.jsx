@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import danco from '../assets/danco.png';
+import hommy from '../assets/Hostel Logo.png';
 
 const Chat = () => {
     const [messages, setMessages] = useState([
-        { sender: 'Bot', text: "Hello, I'm Danco. How may I be of assistance?" }
+        { sender: 'Hommy', text: "Hello, I'm Hommy. How may I be of assistance?" }
     ]);
     const [userMessage, setUserMessage] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ const Chat = () => {
 
     const sendMessage = async (e) => {
         e.preventDefault();
-        if (!userMessage) return;
+        if (!userMessage.trim()) return;
 
         const newMessages = [...messages, { sender: 'You', text: userMessage }];
         setMessages(newMessages);
@@ -28,15 +28,20 @@ const Chat = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message: userMessage }),
+                body: JSON.stringify({ message: userMessage.trim() }),
             });
 
+            if (!response.ok) {
+                throw new Error('Server error');
+            }
+
             const data = await response.json();
-            setMessages([...newMessages, { sender: 'Bot', text: data.response }]);
-            setUserMessage('');
+            setMessages([...newMessages, { sender: 'Hommy', text: data.response }]);
         } catch (error) {
             console.error('Error:', error);
-            setMessages([...newMessages, { sender: 'Bot', text: 'There was an error processing your request.' }]);
+            setMessages([...newMessages, { sender: 'Hommy', text: 'There was an error processing your request.' }]);
+        } finally {
+            setUserMessage('');
         }
     };
 
@@ -58,8 +63,8 @@ const Chat = () => {
                 <div className="bg-white shadow-lg rounded-lg w-80 h-96 flex flex-col">
                     {/* Header */}
                     <div className="bg-gray-200 p-4 flex items-center rounded-t-lg">
-                        <img src={danco} alt="DANCO" className="rounded-full w-10 h-10 mr-3" />
-                        <span className="font-semibold text-lg">DANCO</span>
+                        <img src={hommy} alt="Hommy" className="rounded-full w-10 h-10 mr-3" />
+                        <span className="font-semibold text-lg">Hommy</span>
                     </div>
                     {/* Messages */}
                     <div className="flex-grow overflow-auto p-4">

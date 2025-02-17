@@ -33,7 +33,8 @@ Ensure you have the following installed:
  deployed link: 
 
 ### Frontend Setup
-deployed link: 
+deployed link: chatbot-90037b2ej-maryannewambuis-projects.vercel.app
+
 
 ## Usage
 1. Click on the **"Need Help?"** button to open the chat window.

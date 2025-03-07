@@ -18,7 +18,8 @@ migrate = Migrate(app, db)  # Initialize Flask-Migrate
 CORS(app, resources={r"/chat": {"origins": "*"}})
 
 # Ensure necessary nltk dependencies are downloaded
-nltk.download("punkt")
+nltk.download("punkt", download_dir="/opt/render/.nltk_data")  
+nltk.data.path.append("/opt/render/.nltk_data") 
 
 stemmer = PorterStemmer()
 

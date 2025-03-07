@@ -1,6 +1,8 @@
 # PLP HACKATHON AI SOFTWARE ENGINEERING - CHATBOT
 
-# Hommy Chatbot - Website
+# Hommy Chatbot - Website 
+
+## LINK - ""
 
 ## Overview
 Hommy is an AI-powered chatbot designed to assist users with their inquiries on hostels. This was a project I was working on using python and react JS and I just wanted to take this chance to finish it. This chatbot is built using React for the frontend and Python(Flask) for the backend, with a simple machine learning-based response system.
@@ -45,14 +47,22 @@ deployed link: chatbot-90037b2ej-maryannewambuis-projects.vercel.app
 ```
 /hommy-chatbot
 │── /backend
-│   │── app.py          # Flask API
-│   │── data.py         # Chatbot responses
-│   │── requirements.txt # Python dependencies
+│   │── app.py          
+│   │── data.py  
+│   │── chatbot.py
+│   │── models.py    
+│   │── migrations
+│   │── pipfile         
+
+
 │
 │── /frontend
 │   │── /src
 │   │   │── chat.jsx   # Chat component
 │   │── package.json   # Frontend dependencies
+
+│   │── requirements.txt 
+
 ```
 
 ## Contributors

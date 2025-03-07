@@ -6,8 +6,8 @@ from flask_restful import Api, Resource
 from flask_cors import CORS
 import nltk
 from nltk.stem import PorterStemmer
-from data import data
-from models import db
+from backend.data import data
+from backend.models import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://hommy_chatbot_user:z81noTl1V3NVBwvNtjJYMpzx0z7JzKdJ@dpg-cv599cgfnakc73eps3rg-a.oregon-postgres.render.com/hommy_chatbot"
